@@ -122,14 +122,30 @@
                             </div>
                         </div>
                         <!-- chat space -->
-                        <div class="chat_space">
-
+                        <div class="chat_space d-flex flex-column p-5" v-for="contact in contacts">
+                            <div class="chat_cloud sent p-3 rounded-4"
+                                v-for="message in messages">
+                                <div class="cloud_text">
+                                    <span>
+                                        {{messages.message}}
+                                    </span>
+                                </div>
+                                <div class="cloud_date text-end text-secondary">
+                                    <span>
+                                        12:00
+                                    </span>
+                                </div>   
+                            </div>
                         </div>
                         <!-- input text to chat -->
-                        <div class="input_chat d-flex justify-content-around align-items-center p-2 text-success">
-                            <i class="fa-regular fa-face-smile fa-xl"></i>
+                        <div class="input_chat d-flex justify-content-around align-items-center p-2">
+                            <a href="#" class="text-success">
+                                <i class="fa-regular fa-face-smile fa-xl"></i>
+                            </a>
                             <input type="text" name="" id="" class="w-75 p-1 border rounded-3" placeholder="Text">
-                            <i class="fa-solid fa-microphone fa-xl"></i>
+                            <a href="#" class="text-success">
+                                <i class="fa-solid fa-microphone fa-xl"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

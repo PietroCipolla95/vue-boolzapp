@@ -24,3 +24,19 @@ body {
     height: calc(100vh - 200px);
 }
 
+.cloud_date span {
+    font-size: 15px;
+}
+
+.sent {
+    width: 200px;
+    background-color: lightgreen;
+    align-self: flex-end;
+}
+
+.received {
+    width: 200px;
+    background-color: lightcoral;
+    align-self: flex-start;
+}
+
