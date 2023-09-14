@@ -11,13 +11,8 @@ body {
     border-radius: 50%;
 }
 
-.my_vh {
-    height: 100vh;
-    overflow-y: scroll;
-}
-
-#last_txt_date {
-    font-size: 15px;
+.last_txt, #last_txt_date  {
+    font-size: 13px;
 }
 
 .chat_space {
@@ -27,6 +22,10 @@ body {
 
 .cloud_date span {
     font-size: 15px;
+}
+
+.input_chat {
+    height: 50px;
 }
 
 .sent {
@@ -40,4 +39,6 @@ body {
     background-color: lightcoral;
     align-self: flex-start;
 }
+
+
 

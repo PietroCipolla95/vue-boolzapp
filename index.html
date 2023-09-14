@@ -89,7 +89,7 @@
                                         <span>
                                             {{contact.name}}
                                         </span>
-                                        <span class="text-secondary">
+                                        <span class="text-secondary last_txt">
                                             {{contact.messages[contact.messages.length - 1].message}}                                            
                                         </span>
                                     </div>
@@ -129,11 +129,37 @@
                         </div>
                         <!-- chat space -->
                         <div class="chat_space d-flex flex-column p-5">
-                            <div class="chat_cloud sent p-3 rounded-4"
-                                v-for="message in messages">
+                            <div class="chat_cloud sent p-3 mb-3 rounded-4"
+                                v-for="">
                                 <div class="cloud_text">
                                     <span>
-                                        {{message}}
+                                        message
+                                    </span>
+                                </div>
+                                <div class="cloud_date text-end text-secondary">
+                                    <span>
+                                        12:00
+                                    </span>
+                                </div>   
+                            </div>
+                            <div class="chat_cloud sent p-3 mb-3 rounded-4"
+                                v-for="">
+                                <div class="cloud_text">
+                                    <span>
+                                        message
+                                    </span>
+                                </div>
+                                <div class="cloud_date text-end text-secondary">
+                                    <span>
+                                        12:00
+                                    </span>
+                                </div>   
+                            </div>
+                            <div class="chat_cloud received p-3 mb-3 rounded-4"
+                                v-for="">
+                                <div class="cloud_text">
+                                    <span>
+                                        message
                                     </span>
                                 </div>
                                 <div class="cloud_date text-end text-secondary">
