@@ -21,7 +21,7 @@ body {
 }
 
 .cloud_date span {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .input_chat {
@@ -29,13 +29,13 @@ body {
 }
 
 .sent {
-    width: 200px;
+    width: 350px;
     background-color: lightgreen;
     align-self: flex-end;
 }
 
 .received {
-    width: 200px;
+    width: 300px;
     background-color: lightcoral;
     align-self: flex-start;
 }
