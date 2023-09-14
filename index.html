@@ -89,12 +89,14 @@
                                         <span>
                                             {{contact.name}}
                                         </span>
-                                        <span class="text-secondary" v-for="(message, index) in messages">
-                                            {{messages[i].message}}
+                                        <span class="text-secondary">
+                                            {{contact.messages[contact.messages.length - 1].message}}                                            
                                         </span>
                                     </div>
                                 </div>
-                                <span id="last_txt_date" class="text-secondary text-end py-2 pe-3">12:00</span>
+                                <span id="last_txt_date" class="text-secondary text-end py-2 pe-3">
+                                    {{contact.messages[contact.messages.length - 1].date}}
+                                </span>
                             </div>
                         </div>
                     </div>
