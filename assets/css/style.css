@@ -1,3 +1,6 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
+    background: #06eff5 linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(123,0,144,1) 51%, rgba(6,239,245,1) 96%);
+    background-repeat: no-repeat;
+    height: 150px;
 }
