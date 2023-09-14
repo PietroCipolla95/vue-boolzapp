@@ -89,8 +89,8 @@
                                         <span>
                                             {{contact.name}}
                                         </span>
-                                        <span class="text-secondary">
-                                            {{contact.messages[1].message}}
+                                        <span class="text-secondary" v-for="(message, index) in messages">
+                                            {{messages[i].message}}
                                         </span>
                                     </div>
                                 </div>
