@@ -4,3 +4,9 @@ body {
     background-repeat: no-repeat;
     height: 150px;
 }
+
+.col-4 img {
+    width: 50px;
+    border-radius: 50%;
+}
+
