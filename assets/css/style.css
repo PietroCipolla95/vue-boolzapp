@@ -5,8 +5,22 @@ body {
     height: 150px;
 }
 
-.col-4 img {
+.col-4 img, .col-8 img {
     width: 50px;
     border-radius: 50%;
+}
+
+.my_vh {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+#last_txt_date {
+    font-size: 15px;
+}
+
+.chat_space {
+    background-image: url(../img/mine.jpg);
+    height: calc(100vh - 200px);
 }
 
