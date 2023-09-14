@@ -29,15 +29,16 @@
         <link rel="stylesheet" href="./assets/css/style.css">
 
     </head>
-    <body class="">
+    <body class>
         <!-- #App vuejs -->
         <div id="app">
 
-            <div class="container py-5">
+            <div class="container pt-5">
                 <div class="row">
                     <div class="col-4 bg-light p-0">
                         <!-- card header -->
-                        <div class="card-header d-flex justify-content-between align-items-center">
+                        <div
+                            class="card-header d-flex justify-content-between align-items-center">
                             <div class="your_profile p-2">
                                 <img src="./assets/img/avatar_io.jpg">
                                 <span class="ps-3">You</span>
@@ -52,37 +53,52 @@
                                 </a>
                                 <a href="#" class="text-success pe-4">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
-                                </a>                                
+                                </a>
                             </div>
                         </div>
                         <!-- card notifications -->
-                        <div id="notifications" class="bg-black p-2 d-flex align-items-center border border-light">
+                        <div id="notifications"
+                            class="bg-black p-2 d-flex align-items-center border border-light">
                             <!-- notifications image -->
                             <div class="icon bg-info rounded-5 p-3 text-center">
-                                <i class="fa-solid fa-bell-slash fa-xl text-light"></i> 
+                                <i
+                                    class="fa-solid fa-bell-slash fa-xl text-light"></i>
                             </div>
                             <!-- notifications controls -->
                             <div class="texts text-light ps-3">
                                 <span>Ricevi notifiche per i nuovi messaggi</span>
                                 <br>
-                                <a href="#" class="text-secondary">Attiva notifiche desktop</a>
-                            </div>                             
+                                <a href="#" class="text-secondary">Attiva
+                                    notifiche desktop</a>
+                            </div>
                         </div>
                         <!-- card searchbar -->
-                        <div class="card_searchbar">
-
+                        <div class="card_searchbar p-2 d-flex align-items-center">
+                            <input class="form-control me-2" type="search"
+                                placeholder="Search user or start a new chat"
+                                aria-label="Search">
                         </div>
-                        <div class="card-body">
-
+                        <!-- cardbody -->
+                        <div class="card-body py-1">
+                            <!-- contact chats generator -->
+                            <div  class="d-flex justify-content-between" v-for="contact in contacts">
+                                <div class="p-2 d-flex">
+                                    <img :src="contact.avatar">
+                                    <div class="texts_contact d-flex flex-column">
+                                        <span>{{contact.name}}</span>
+                                        <span class="text-secondary">Ultimo messaggio inviato</span>
+                                    </div>
+                                </div>
+                                <span id="last_txt_date" class="text-secondary text-end py-2 pe-3">12:00</span>
+                            </div>
                         </div>
-
 
                     </div>
                     <div class="col-8">
 
                     </div>
                 </div>
-            </div>   
+            </div>
 
         </div>
 
