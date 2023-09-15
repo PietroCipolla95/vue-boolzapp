@@ -10,7 +10,9 @@ createApp({
     data() {
         return {
 
-            activeChat : 0,
+            activeChat: 0,
+
+            newMessage: '',
 
             contacts: [
                 {
@@ -179,15 +181,51 @@ createApp({
         }
 
     },
-    
-    methods : {
+
+    methods: {
+
+        timeStamp() {
+
+            this.message.date.getHours() + ':' + message.date.getMinutes()
+
+        },
 
         showChat(i) {
 
             this.activeChat = i
 
-        }
-    
+        },
+
+        sendMessage(newMessage, activeChat) {
+
+            if (newMessage != '') {
+
+                this.contacts[activeChat].messages.push({
+                    date: new Date().getHours() + ':' + new Date().getMinutes(),
+                    message: newMessage,
+                    status: 'sent'
+                });
+
+                this.newMessage = '';
+
+                setTimeout(() => {
+
+                    this.contacts[activeChat].messages.push({
+                        date: new Date().getHours() + ':' + new Date().getMinutes(),
+                        message: 'ok',
+                        status: 'received'
+                    });
+
+                }, 1000);
+
+
+            } else {
+
+
+
+            }
+
+        },
 
     }
 

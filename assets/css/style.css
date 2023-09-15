@@ -18,6 +18,11 @@ body {
 .chat_space {
     background-image: url(../img/mine.jpg);
     height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+.chat_space::-webkit-scrollbar {
+    display: none;
 }
 
 .cloud_date span {
