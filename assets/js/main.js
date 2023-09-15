@@ -175,5 +175,23 @@ createApp({
             ]
 
         }
+
+    },
+    
+    methods : {
+
+        switchChat(i) {
+
+            if (this.contacts[i].visible != true) {
+
+                this.contacts[i].visible = true;
+                console.log(this.contacts[i].visible);
+                
+            }
+            
+
+        }
+
     }
+
 }).mount('#app')
