@@ -10,6 +10,8 @@ createApp({
     data() {
         return {
 
+            activeChat : 0,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -180,17 +182,12 @@ createApp({
     
     methods : {
 
-        switchChat(i) {
+        showChat(i) {
 
-            if (this.contacts[i].visible != true) {
-
-                this.contacts[i].visible = true;
-                console.log(this.contacts[i].visible);
-                
-            }
-            
+            this.activeChat = i
 
         }
+    
 
     }
 

@@ -82,7 +82,7 @@
                         <!-- cardbody -->
                         <div class="card-body py-1">
                             <!-- contact chats generator -->
-                            <div  class="d-flex justify-content-between" v-for="(contact, i) in contacts" @click="switchChat(i)">
+                            <div  class="d-flex justify-content-between" v-for="(contact, i) in contacts" @click="showChat(i)">
                                 <div class="p-2 d-flex">
                                     <img :src="contact.avatar">
                                     <div class="texts_contact d-flex flex-column">
@@ -102,16 +102,16 @@
                     </div>
 
                     <!-- right column -->
-                    <div class="col-8 p-0 bg-light border-start" v-for="contact in contacts">
-                        <div class="wrapper" v-if="contact.visible">
+                    <div class="col-8 p-0 bg-light border-start">
+                        <div class="wrapper">
                             <!-- card header -->
                             <div class="card-header d-flex justify-content-between align-items-center border-bottom">
                                 <!-- contact infoss -->
                                 <div class="contact profile p-2 d-flex">
-                                    <img :src="contact.avatar">
+                                    <img :src="contacts[activeChat].avatar">
                                     <!-- contact infos -->
                                     <div class="d-flex flex-column ps-3 pt-1"> 
-                                        <span>{{contact.name}}</span>
+                                        <span>{{contacts[activeChat].name}}</span>
                                         <span class="text-secondary">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                             <div class="chat_space d-flex flex-column p-5">
                                 <div class="chat_cloud px-3 mb-3 rounded-4" 
                                 :class="(message.status === 'sent' ? 'sent' : 'received')"
-                                v-for="message in contact.messages">
+                                v-for="message in contacts[activeChat].messages">
                                     <div class="cloud_text py-3"> 
                                         <span>
                                             {{message.message}}
