@@ -40,7 +40,7 @@ createApp({
                 {
                     name: 'Fabio',
                     avatar: './assets/img/avatar_2.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -62,7 +62,7 @@ createApp({
                 {
                     name: 'Marco',
                     avatar: './assets/img/avatar_3.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -84,7 +84,7 @@ createApp({
                 {
                     name: 'Alessandro B.',
                     avatar: './assets/img/avatar_4.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -101,7 +101,7 @@ createApp({
                 {
                     name: 'Alessandro L.',
                     avatar: './assets/img/avatar_5.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -118,7 +118,7 @@ createApp({
                 {
                     name: 'Claudia',
                     avatar: './assets/img/avatar_5.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -140,7 +140,7 @@ createApp({
                 {
                     name: 'Federico',
                     avatar: './assets/img/avatar_7.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -157,7 +157,7 @@ createApp({
                 {
                     name: 'Davide',
                     avatar: './assets/img/avatar_8.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -184,9 +184,10 @@ createApp({
 
     methods: {
 
-        timeStamp() {
+        timeStamp(date) {
 
-            this.message.date.getHours() + ':' + message.date.getMinutes()
+            const stamp = date.slice(11, 16);
+            return stamp
 
         },
 
@@ -197,11 +198,22 @@ createApp({
         },
 
         sendMessage(newMessage, activeChat) {
+            
+            const  getDate = new Date();
+            const month = getDate.getMonth().toString().padStart(2, '0');
+            const day = getDate.getDay().toString().padStart(2, '0');
+            const year = getDate.getFullYear().toString().padStart(2, '0');
+
+            const hour = getDate.getHours().toString().padStart(2, '0');
+            const minutes = getDate.getMinutes().toString().padStart(2, '0');
+            const seconds = getDate.getSeconds().toString().padStart(2, '0');
+
+            const dateNow = `${day}/${month}/${year} ${hour}:${minutes}:${seconds}`
 
             if (newMessage != '') {
 
                 this.contacts[activeChat].messages.push({
-                    date: new Date().getHours() + ':' + new Date().getMinutes(),
+                    date: dateNow,
                     message: newMessage,
                     status: 'sent'
                 });
@@ -211,7 +223,7 @@ createApp({
                 setTimeout(() => {
 
                     this.contacts[activeChat].messages.push({
-                        date: new Date().getHours() + ':' + new Date().getMinutes(),
+                        date: dateNow,
                         message: 'ok',
                         status: 'received'
                     });

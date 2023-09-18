@@ -101,8 +101,8 @@
                                 </div>
                                 <span id="last_txt_date"
                                     class="text-secondary text-end py-2 pe-3">
-                                    {{contact.messages[contact.messages.length -
-                                    1].date}}
+                                    {{timeStamp(contact.messages[contact.messages.length -
+                                    1].date)}}
                                 </span>
                             </div>
                         </div>
@@ -120,8 +120,7 @@
                                     <!-- contact infos -->
                                     <div class="d-flex flex-column ps-3 pt-1">
                                         <span>{{contacts[activeChat].name}}</span>
-                                        <span class="text-secondary">Ultimo
-                                            messaggio inviato</span>
+                                        <span class="text-secondary"></span>
                                     </div>
                                 </div>
                                 <!-- card header controls -->
@@ -150,7 +149,7 @@
                                     <div
                                         class="cloud_date text-end text-secondary">
                                         <span>
-                                            {{message.date}}
+                                            {{timeStamp(message.date)}}
                                         </span>
                                     </div>
                                 </div>
