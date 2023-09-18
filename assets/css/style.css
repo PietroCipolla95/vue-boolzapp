@@ -11,6 +11,14 @@ body {
     border-radius: 50%;
 }
 
+.card_body {
+    cursor: pointer;
+}
+
+.selected {
+    background-color: lightpink;
+}
+
 .icon {
     aspect-ratio: 1/1;
 }

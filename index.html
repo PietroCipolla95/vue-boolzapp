@@ -84,9 +84,10 @@
                                 @keyup.enter="searchUser">
                         </div>
                         <!-- cardbody -->
-                        <div class="card-body py-1">
+                        <div class="card_body py-1">
                             <!-- contact chats generator -->
                             <div class="d-flex justify-content-between"
+                                :class="i == activeChat ? 'selected' : ''"
                                 v-for="(contact, i) in contacts"
                                 @click="showChat(i)">
                                 <!-- Name avatar and last message -->
