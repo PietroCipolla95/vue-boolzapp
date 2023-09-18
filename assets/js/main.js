@@ -14,6 +14,8 @@ createApp({
 
             newMessage: '',
 
+            findUser: '',
+
             contacts: [
                 {
                     name: 'Michele',
@@ -239,6 +241,31 @@ createApp({
 
         },
 
-    }
+        searchUser() {
+
+            let user = this.findUser.toLowerCase()
+
+            this.contacts.forEach((contact) => {
+
+                if (user === '') {
+
+                    contact.visible = true;
+                    
+                } else if (!contact.name.toLowerCase().includes(user)) {
+
+                    this.findUser = '';
+                    contact.visible = false;
+
+                    
+                } else {
+
+                    contact.visible = true
+                }
+                
+            });       
+
+        },
+
+    },
 
 }).mount('#app')

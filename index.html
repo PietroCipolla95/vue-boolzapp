@@ -61,7 +61,8 @@
                         <div id="notifications"
                             class="bg-black p-2 d-flex align-items-center border border-light">
                             <!-- notifications image -->
-                            <div class="icon bg-info rounded-5 p-3 text-center">
+                            <div
+                                class="icon bg-info rounded-5 p-3 d-flex align-items-center">
                                 <i
                                     class="fa-solid fa-bell-slash fa-xl text-light"></i>
                             </div>
@@ -78,7 +79,9 @@
                             class="card_searchbar p-2 d-flex align-items-center">
                             <input class="form-control me-2" type="search"
                                 placeholder="Search user or start a new chat"
-                                aria-label="Search">
+                                aria-label="Search"
+                                v-model="findUser"
+                                @keyup.enter="searchUser">
                         </div>
                         <!-- cardbody -->
                         <div class="card-body py-1">
@@ -86,7 +89,9 @@
                             <div class="d-flex justify-content-between"
                                 v-for="(contact, i) in contacts"
                                 @click="showChat(i)">
-                                <div class="p-2 d-flex">
+                                <!-- Name avatar and last message -->
+                                <div class="p-2 d-flex"
+                                    v-if="contact.visible">
                                     <img :src="contact.avatar">
                                     <div
                                         class="texts_contact d-flex flex-column">
@@ -99,9 +104,12 @@
                                         </span>
                                     </div>
                                 </div>
+                                <!-- last message date -->
                                 <span id="last_txt_date"
-                                    class="text-secondary text-end py-2 pe-3">
-                                    {{timeStamp(contact.messages[contact.messages.length -
+                                    class="text-secondary text-end py-2 pe-3"
+                                    v-if="contact.visible">
+                                    {{timeStamp(contact.messages[contact.messages.length
+                                    -
                                     1].date)}}
                                 </span>
                             </div>

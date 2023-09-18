@@ -11,6 +11,10 @@ body {
     border-radius: 50%;
 }
 
+.icon {
+    aspect-ratio: 1/1;
+}
+
 .last_txt, #last_txt_date  {
     font-size: 13px;
 }
