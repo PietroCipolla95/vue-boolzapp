@@ -44,7 +44,7 @@ body {
 }
 
 .received {
-    width: 300px;
+    width: 350px;
     background-color: lightcoral;
     align-self: flex-start;
 }
