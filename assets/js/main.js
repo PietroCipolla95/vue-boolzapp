@@ -253,10 +253,8 @@ createApp({
                     
                 } else if (!contact.name.toLowerCase().includes(user)) {
 
-                    this.findUser = '';
                     contact.visible = false;
-
-                    
+                  
                 } else {
 
                     contact.visible = true
